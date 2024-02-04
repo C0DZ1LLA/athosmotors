@@ -4,40 +4,18 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>ATHOS MOTORS | Platform</title>
-    <style>
-      body, html {
-          margin: 0;
-          padding: 0;
-          overflow: hidden;
-      }
-
-      #unity-canvas {
-          display: block;
-          width: 100vw;
-          height: 100vh;
-          background: #1F7180;
-      }
-
-      #rotate-message {
-          display: none;
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: #1F7180;
-          color: #ffffff;
-          font-size: 24px;
-          text-align: center;
-          line-height: 100vh;
-      }
-  </style>
   </head>
   <body style="text-align: center; padding: 0; border: 0; margin: 0;">
     <canvas id="unity-canvas" width="100%" height="100%" tabindex="-1" style="width: 100vw; height: 100vh; background: #1F7180"></canvas>
     <script src="Build/ATHOSWEBGL.loader.js"></script>
-            <!-- Google tag (gtag.js) -->
-            <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF0NELVK00"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZF0NELVK00"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-ZF0NELVK00');
+    </script>
     <script>
       if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
         // Mobile device style: fill the whole browser client area with the game canvas:
