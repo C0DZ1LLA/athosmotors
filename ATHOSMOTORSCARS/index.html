@@ -4,105 +4,164 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ATHOS MOTORS</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="css/styles.css"> <!-- Link to your custom CSS file -->
+    <style>
+/* Reset default browser styles */
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #000000, #262626); /* Gradient background for a dynamic look */
+    color: #fff; /* Lighter text color for better contrast */
+    overflow-x: hidden; /* Hide horizontal scrollbar */
+    margin: 0; /* Reset default margin */
+}
+
+.container {
+    width: 90%; /* Adjusted width for better responsiveness */
+    max-width: 1200px; /* Maximum width for large screens */
+    margin: 20px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8); /* Darker background color for the container with transparency */
+    border-radius: 20px; /* Increased border radius for a softer look */
+    box-shadow: 0 0 60px rgba(255, 255, 255, 0.3); /* Glowing box shadow for a futuristic effect */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Center items horizontally */
+    position: relative; /* Positioning for pseudo-elements */
+    animation: fadeIn 1s ease; /* Fade-in animation for the container */
+}
+
+.container::before, .container::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px; /* Rounded corners for pseudo-elements */
+    background: radial-gradient(ellipse at center, rgba(255,255,255,0.15) 0%,rgba(0,0,0,0.8) 100%); /* Gradient overlay */
+    pointer-events: none; /* Disable pointer events */
+    z-index: -1; /* Behind the container content */
+}
+
+h1, h2 {
+    font-size: 6vw; /* Responsive font size for headings */
+    color: #ffcc00; /* Bright accent color for the heading */
+    margin-bottom: 3vw; /* Adjusted spacing below the heading */
+    text-align: center; /* Center alignment for the heading */
+    text-transform: uppercase; /* Uppercase text for a modern look */
+    letter-spacing: 0.2em; /* Increased letter spacing for emphasis */
+    text-shadow: 0 0 3vw rgba(255, 204, 0, 0.8); /* Text shadow for a glowing effect */
+    animation: neonGlow 2s infinite alternate; /* Neon glow animation for headings */
+}
+
+p {
+    font-size: 2vw; /* Responsive font size for paragraphs */
+    margin-bottom: 3vw; /* Adjusted spacing below paragraphs */
+    text-align: center; /* Center alignment for paragraphs */
+    line-height: 1.8; /* Improved readability with increased line height */
+    animation: fadeIn 1s ease; /* Fade-in animation for paragraphs */
+}
+
+.car {
+    display: flex;
+    border: 0.5vw solid #fff; /* Thicker border for cars */
+    margin-bottom: 6vw; /* Adjusted spacing between cars */
+    padding: 4vw;
+    border-radius: 2.5vw; /* Rounded corners for cars */
+    background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 100%); /* Gradient background for cars */
+    position: relative; /* Positioning for pseudo-elements */
+    animation: pulse 3s infinite alternate; /* Pulse animation for cars */
+}
+
+.car::before, .car::after {
+    content: '';
+    position: absolute;
+    top: 1vw;
+    left: 1vw;
+    width: calc(100% - 2vw);
+    height: calc(100% - 2vw);
+    border-radius: 2.5vw; /* Rounded corners for pseudo-elements */
+    background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.4) 50%, rgba(255,255,255,0.2) 100%); /* Gradient overlay */
+    pointer-events: none; /* Disable pointer events */
+    z-index: -1; /* Behind the car content */
+}
+
+.car-content {
+    display: flex;
+    width: 100%;
+}
+
+.car-images {
+    flex: 1;
+    margin-right: 5vw; /* Adjusted spacing between car images */
+}
+
+.car-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 5vw; /* Adjusted spacing between car images */
+    border-radius: 2vw; /* Rounded corners for car images */
+    box-shadow: 0 0 3vw rgba(255, 255, 255, 0.6); /* Glowing effect for car images */
+    animation: fadeIn 1s ease; /* Fade-in animation for car images */
+}
+
+.car-details {
+    flex: 2;
+}
+
+.car-info {
+    margin-bottom: 3vw; /* Adjusted spacing between car info */
+    font-size: 1.8vw; /* Responsive font size for car info */
+    animation: neonGlow 2s infinite alternate; /* Neon glow animation for car info */
+}
+
+.button-container {
+    margin-top: 6vw; /* Adjusted spacing above button container */
+    text-align: center;
+    animation: fadeIn 1s ease; /* Fade-in animation for button container */
+}
+
+.car-button {
+    display: inline-block;
+    margin-right: 3vw; /* Adjusted spacing between buttons */
+    padding: 2vw 4vw; /* Adjusted padding for buttons */
+    font-size: 2vw; /* Responsive font size for buttons */
+    background-color: #00ffcc;
+    color: #000;
+    text-decoration: none;
+    border-radius: 4vw; /* Rounded corners for buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for button color */
+    animation: neonGlow 2s infinite alternate; /* Neon glow animation for buttons */
+}
+
+.car-button:hover {
+    background-color: #00cc99; /* Darker color on hover */
+}
+
+
+    </style>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
-    <style>
-        /* CSS styles */
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        h1 {
-            text-align: center;
-            color: #333;
-            font-size: 36px;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-        }
-
-        .car {
-            display: flex;
-            margin-bottom: 40px;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease;
-            background-color: #fff;
-        }
-
-        .car:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .car img {
-            width: 250px;
-            height: auto;
-            border-radius: 10px 0 0 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .car-content {
-            flex-grow: 1;
-            padding: 20px;
-        }
-
-        .car-details {
-            margin-top: 20px;
-        }
-
-        h2 {
-            margin: 0 0 10px;
-            font-size: 24px;
-            color: #333;
-            text-transform: uppercase;
-        }
-
-        p {
-            margin: 0 0 15px;
-            font-size: 16px;
-            color: #666;
-        }
-
-        .button-container {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-
-        .button-container a {
-            padding: 10px 20px;
-            background-color: #333;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-            font-size: 16px;
-            text-transform: uppercase;
-        }
-
-        .button-container a:hover {
-            background-color: #555;
-        }
-    </style>
-    </style>
 </head>
-<body>
 
+<body>
+    
+    <div class="container">
+        <button class="car-button" onclick="openURL('https://maps.app.goo.gl/YTz4XC4mqFVWJuUWA')">DIRECTION</button>
+        <button class="car-button" onclick="openURL('https://athosmotorscy.com/')">HOME</button>
+        <button class="car-button" onclick="openURL('https://www.facebook.com/people/Athos-Motors/61555675782514/')">FACEBOOK</button>
+    </div>
+    
 <div class="container">
     <h1 style="text-align: center;">ATHOS MOTORS</h1>
     <div id="cars"></div>
@@ -462,6 +521,19 @@
         }
     ];
 
+
+
+
+
+
+
+
+
+        // Function to open URLs
+        function openURL(url) {
+        window.open(url, '_blank');
+    }
+    
     // Function to display cars
     function displayCars() {
         const carsContainer = document.getElementById('cars');
@@ -471,28 +543,28 @@
             carElement.classList.add('car');
             let carImages = '';
             car.images.forEach((image, index) => {
-                carImages += `<a href="${image}" data-fancybox="car-${car.id}" data-src="${image}"><img src="${image}" alt="${car.brand} ${car.model}" data-index="${index}"></a>`;
+                carImages += `<a href="${image}" data-fancybox="car-${car.id}" data-src="${image}"><img src="${image}" alt="${car.brand} ${car.model}" data-index="${index}" class="car-image"></a>`;
             });
             carElement.innerHTML = `
             <div class="car-content">
-        <div class="car-images">
-            ${carImages}
-        </div>
-        <div class="car-details">
-            <h2>${car.brand} ${car.model}</h2>
-            <p>Year: ${car.year}</p>
-            <p>Price: €${car.price}</p>
-            <p>Mileage (in km): ${car.mileage}</p>
-            <p>Fuel type: ${car.fuelType}</p>
-            <p>Engine size: ${car.engineSize}</p>
-            <p>Power: ${car.power}</p>
-            <div class="button-container">
-                <a href="tel:${car.phone}">Call</a>
-                <a href="mailto:${car.email}">Email</a>
+                <div class="car-images">
+                    ${carImages}
+                </div>
+                <div class="car-details">
+                    <h2>${car.brand} ${car.model}</h2>
+                    <p class="car-info">Year: ${car.year}</p>
+                    <p class="car-info">Price: €${car.price}</p>
+                    <p class="car-info">Mileage (in km): ${car.mileage}</p>
+                    <p class="car-info">Fuel type: ${car.fuelType}</p>
+                    <p class="car-info">Engine size: ${car.engineSize}</p>
+                    <p class="car-info">Power: ${car.power}</p>
+                    <div class="button-container">
+                        <a href="tel:${car.phone}" class="car-button">Call</a>
+                        <a href="mailto:${car.email}" class="car-button">Email</a>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-`;
+            `;
             carsContainer.appendChild(carElement);
         });
     }
