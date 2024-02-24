@@ -523,9 +523,45 @@ p {
 
 
 
+    function needsUpdate() {
+            // Check if a version is stored in local storage
+            var storedVersion = localStorage.getItem('pageVersion');
+            // Get the current version of the page
+            var currentVersion = '1.0'; // Change this to the version of your page
+            // Check if there's a stored version and if it matches the current version
+            if (storedVersion !== currentVersion) {
+                return true; // Data needs to be updated
+            } else {
+                return false; // Data is up to date
+            }
+        }
 
+        // Function to save the current version in local storage
+        function saveVersion() {
+            var currentVersion = '1.0'; // Change this to the version of your page
+            localStorage.setItem('pageVersion', currentVersion);
+        }
 
+        // Function to update data if needed and refresh the page
+        function updateAndRefresh() {
+            if (needsUpdate()) {
+                // Clear saved data or perform any necessary updates here
+                // Example: clearSavedData();
+                saveVersion(); // Save the current version
+                refreshPage(); // Refresh the page
+            }
+        }
 
+        // Function to refresh the page
+        function refreshPage() {
+            // Reload the current page
+            location.reload();
+        }
+
+        // Call the function when the page is visited
+        window.onload = function() {
+            updateAndRefresh(); // Check for updates and refresh if needed
+        };
 
 
 
