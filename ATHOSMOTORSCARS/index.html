@@ -17,7 +17,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css" />
     <link rel="stylesheet" href="css/styles.css"> <!-- Link to your custom CSS file -->
     <style>
-/* Reset default browser styles */
+
 /* Reset default browser styles */
 * {
     margin: 0;
@@ -71,6 +71,11 @@ h1, h2 {
     letter-spacing: 0.2em; /* Increased letter spacing for emphasis */
     text-shadow: 0 0 3vw rgba(255, 204, 0, 0.8); /* Text shadow for a glowing effect */
     animation: neonGlow 2s infinite alternate; /* Neon glow animation for headings */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+h1:hover, h2:hover {
+    transform: scale(1.1); /* Scale up on hover */
 }
 
 p {
@@ -79,6 +84,11 @@ p {
     text-align: center; /* Center alignment for paragraphs */
     line-height: 1.8; /* Improved readability with increased line height */
     animation: fadeIn 1s ease; /* Fade-in animation for paragraphs */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+p:hover {
+    transform: translateY(-5px); /* Move up on hover */
 }
 
 .car {
@@ -90,6 +100,11 @@ p {
     background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.2) 50%, rgba(255,255,255,0.1) 100%); /* Gradient background for cars */
     position: relative; /* Positioning for pseudo-elements */
     animation: pulse 3s infinite alternate; /* Pulse animation for cars */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.car:hover {
+    transform: scale(1.05); /* Scale up on hover */
 }
 
 .car::before, .car::after {
@@ -122,6 +137,11 @@ p {
     border-radius: 2vw; /* Rounded corners for car images */
     box-shadow: 0 0 3vw rgba(255, 255, 255, 0.6); /* Glowing effect for car images */
     animation: fadeIn 1s ease; /* Fade-in animation for car images */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.car-image:hover {
+    transform: rotate(5deg); /* Rotate on hover */
 }
 
 .car-details {
@@ -132,6 +152,11 @@ p {
     margin-bottom: 3vw; /* Adjusted spacing between car info */
     font-size: 1.8vw; /* Responsive font size for car info */
     animation: neonGlow 2s infinite alternate; /* Neon glow animation for car info */
+    transition: transform 0.3s ease; /* Smooth transition on hover */
+}
+
+.car-info:hover {
+    transform: translateY(-5px); /* Move up on hover */
 }
 
 .button-container {
@@ -155,6 +180,7 @@ p {
 
 .car-button:hover {
     background-color: #00cc99; /* Darker color on hover */
+    transform: scale(1.1); /* Scale up on hover */
 }
 
 
